@@ -18,10 +18,3 @@ class MyUserForm(forms.Form):
     home_page = forms.URLField(
         max_length=200, required=False)
     age = forms.IntegerField(required=False)
-
-
-class MyUserChangeForm(UserChangeForm):
-
-    class Meta:
-        model = MyUser
-        fields = '__all__'
