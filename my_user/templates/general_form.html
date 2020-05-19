@@ -5,8 +5,10 @@
     {{ message_before }}
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="userDetails">
+            {{ form.as_p }}
         <input type="submit" value="Submit">
+        </div>
         {{ message_after }}
     </form>
 {% endblock %}
