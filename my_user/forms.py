@@ -1,6 +1,4 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm
-from my_user.models import MyUser
 
 
 class LoginForm(forms.Form):
