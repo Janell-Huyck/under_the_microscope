@@ -1,3 +1,32 @@
 {% block content %}
-<p>this is menu bar</p>
+{% comment %} Conditional classes for navigation links logic provided by
+            https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry {% endcomment %}
+            <div class="topnav">
+
+                {% comment %} Everyone Can See {% endcomment %}
+                <div>
+                    <a href="{% url "home" %}" class="{% if request.resolver_match.url_name == "home" %}active{% endif %}">See My Details</a>
+                </div>
+
+
+                {% comment %} Only shows if you're logged out {% endcomment %}
+                {% if not user.is_authenticated %}
+                    <div>
+                        <a href="{% url "loginPage" %}" class="{% if request.resolver_match.url_name == "loginPage" %}active{% endif %}">Log In</a>
+                    </div>
+                {%endif%}
+
+                {% comment %} Only shows if you're logged in. {% endcomment %}
+                {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'logoutPage' %}?next={% url 'home'%}"> Logout</a>
+                    </div>
+                    <div class="signedIn">
+                        Logged in as: {{user.username}}
+                    </div>
+                {%endif%}
+            </div>
+
+
+
 {% endblock %}
