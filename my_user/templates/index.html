@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Yay you're logged in.  or at least i hope so lol
+<br>
+<h1>Welcome, {{user.display_name}}.</h1>
+<br>
+<div class="userDetails">
+    <h2>Here are your details</h2>
+    <ul>
+        <li>Username: {{user.username}} </li>
+        <li>Display Name: {{user.display_name}} </li>
+        <li>Home Page: {{user.home_page}} </li>
+        <li>Age: {{user.age}} </li>
 
-<h2>`settings.AUTH_USER_MODEL`</h2>
-{{ settings }}
+    </ul>
+</div>
+<div class="userDetails">
+    <p>settings.AUTH_USER_MODEL = {{ settings }}</p>
+</div>
 {% endblock %}
