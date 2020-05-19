@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title>Under the Microscope</title>
+        <link rel="stylesheet" href="{% static 'my_user.css' %}">
+
+    </head>
+    <body>
+        <header>
+            <h1>Under the Microscope</h1>
+            {%include 'menu_bar.html'%}
+        </header>
+            {%block content%}
+            {%endblock%}
+        <footer>
+            <p>Copywright 2020 by Janell Huyck</p>
+        </footer>
+    </body>
+</html>
